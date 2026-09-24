@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>组织谱图</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="stage"></div>
+    <header class="hud">
+      <strong>组织谱图</strong>
+      <span id="spin-state">球体自转 · 头像始终朝向你 · 点空白处可停</span>
+      <button id="spin-btn" type="button">停止转动</button>
+    </header>
+    <div class="search">
+      <input id="q" type="search" placeholder="定位：岗位或姓名" autocomplete="off" />
+      <ul id="hits" hidden></ul>
+    </div>
+    <aside id="card" class="card" hidden>
+      <header>
+        <img id="card-avatar" alt="" />
+        <div>
+          <strong id="card-name"></strong>
+          <p id="card-role"></p>
+        </div>
+        <button id="card-close" type="button" aria-label="关闭">×</button>
+      </header>
+      <p id="card-parent"></p>
+      <p id="card-kids"></p>
+      <button id="card-focus" type="button">飞向此人</button>
+    </aside>
+    <p class="hint">拖动旋转 · 滚轮缩放 · 点球体看姓名与资料 · 点空白处停止/继续自转</p>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
